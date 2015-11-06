@@ -1,0 +1,45 @@
+@import 'core.scss';
+
+.content {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 10vw;
+  }
+
+  p {
+    font-size: 2pvw;
+  }
+
+  .description {
+    text-align: center;
+
+    padding: 20px;
+  }
+
+  .cta {
+    width: 200px;
+
+    padding: 10px;
+    line-height: 20px;
+    font-size: 20px;
+    border-radius: 25px;
+    border: $accent-color solid 3px;
+    text-align: center;
+    background-color: $highlight-color;
+
+    &:hover {
+      background-color: $highlight-hover-cover;
+    }
+  }
+}

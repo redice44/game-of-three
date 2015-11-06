@@ -1,6 +1,13 @@
 extends ./layout.jade
 
 block head
+  link(rel='stylesheet', href='/stylesheets/start.css')
 
 block content
-  h1 start page
+  .content
+    .title
+      h1 Game of Three
+    .play
+      .cta Play
+    .description
+      p A game where you adjust a number so that it is divisible by Three.

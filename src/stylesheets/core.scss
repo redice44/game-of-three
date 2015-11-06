@@ -1,0 +1,16 @@
+$primary-color: #00bcd4;
+$accent-color: #006064;
+$highlight-color: #80deea;
+$highlight-hover-cover: #18FFFF;
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: sans-serif;
+  color: $accent-color;;
+}
+
+html, body {
+  background-color: $primary-color;
+}

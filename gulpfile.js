@@ -10,7 +10,6 @@ gulp.task('watch:app', function() {
 
 gulp.task('build:css', function() {
   gulp.src('./src/**/*.scss')
-    .pipe(concat('all.css'))
     .pipe(sass())
-    .pipe(gulp.dest('./public/stylesheets/'));
+    .pipe(gulp.dest('./public/'));
 });
