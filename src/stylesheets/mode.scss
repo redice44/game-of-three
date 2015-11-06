@@ -1,0 +1,15 @@
+@import 'core.scss';
+
+.content {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+
+  & > div {
+    display: flex;
+    flex-grow: 1;
+
+    justify-content: center;
+  }
+}

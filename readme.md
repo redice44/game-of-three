@@ -6,4 +6,4 @@
 
 ## One Week
 
-Part of the One a Week Project
+Part of the One Week Project
