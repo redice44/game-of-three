@@ -5,6 +5,8 @@ function Routes(app) {
   app.get('/', contentHandler.start);
 
   app.get('/mode', contentHandler.mode);
+
+  app.get('/classic', contentHandler.classic);
 }
 
 module.exports = Routes;

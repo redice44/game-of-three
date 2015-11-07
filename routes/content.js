@@ -6,6 +6,10 @@ function ContentHanlder() {
   this.mode = function(req, res, next) {
     return res.render('mode');
   };
+
+  this.classic = function(req, res, next) {
+    return res.render('classic');
+  };
 }
 
 module.exports = ContentHanlder;
