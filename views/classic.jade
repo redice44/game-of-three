@@ -2,16 +2,24 @@ extends ./layout.jade
 
 block head
   link(rel='stylesheet', href='/stylesheets/classic.css')
+  script(src='/jquery/dist/jquery.min.js')
+  script(src='/javascript/classic.js')
 
 block content
+  .menu
+    .title Game of Three
+    .timer 00:00
+    .mode Classic
   .content
-    .menu
-      .title
-      .timer
-      .mode
-    .game
-      .number
-      .actions
-        .plus-one
-        .divide
-        .sub-one
+    .info
+      .plus-one +1
+      .number 
+        #current 400
+      .sub-one -1
+    .actions
+      #plus-one 
+        div +1
+      #divide 
+        div Divide
+      #sub-one 
+        div -1

@@ -8,7 +8,7 @@ function ContentHanlder() {
   };
 
   this.classic = function(req, res, next) {
-    return res.render('classic');
+    return res.render('classic', {'test': 'testing'});
   };
 }
 

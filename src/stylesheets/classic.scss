@@ -1,5 +1,85 @@
 @import 'core.scss';
 
+.menu {
+  height: 5vh;
+  width: 100%;
+  padding: 0 10px;
+  border-bottom: 2px solid $accent-color;
+  box-sizing: border-box;
+
+  font-size: 4vh;
+  line-height: 5vh;
+
+  display: flex;
+  flex-direction: row;
+
+  & > div {
+    flex-grow: 1;
+    width: 33%;
+  }
+
+  .timer {
+    text-align: center;
+  }
+
+  .mode {
+    text-align: right;
+  }
+}
+
 .content {
-  height: 100vh;
+  height: 95vh;
+  display: flex;
+  flex-direction: row;
+
+  & > div {
+    width: 50%;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+
+    border-right: 3px solid $accent-color;
+    & > div {
+      flex-grow: 1;
+    }
+
+    .number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25vh;
+    }
+  }
+  .actions {
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    & > div:hover {
+      background-color: $highlight-color;
+    }
+
+    #divide {
+      border-top: 3px solid $accent-color;
+      border-bottom: 3px solid $accent-color;
+      box-sizing: border-box;
+    }
+    
+    #divide div {
+      font-size: 20vh;
+    }
+
+    #plus-one div, #sub-one div {
+      font-size: 15vh;
+    }
+  }
+
 }
