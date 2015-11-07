@@ -6,10 +6,60 @@
   display: flex;
   flex-direction: row;
 
+  h1 {
+    font-size: 5vw;
+  }
+
+  h3 {
+    font-size: 2vw;
+    padding: 20px;
+  }
+
   & > div {
     display: flex;
     flex-grow: 1;
+    flex-direction: column;
 
+  }
+
+  .classic, .zero-sum {
+    align-items: center;
+    
+    & > div {
+      flex-grow: 1;
+    }
+  }
+
+  .classic {
+    border-right: 5px $accent-color dashed;
+    box-sizing: border-box;
+  }
+
+  .title, .play, .description {
+    display:  flex;
+    flex-direction: column;
     justify-content: center;
   }
+
+  .description {
+    align-items: center;
+  }
+
+  .cta {
+    width: 200px;
+
+    padding: 10px;
+    line-height: 20px;
+    font-size: 20px;
+    border-radius: 25px;
+    border: $accent-color solid 3px;
+    text-align: center;
+    background-color: $highlight-color;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $highlight-hover-cover;
+    }
+  }
+
 }

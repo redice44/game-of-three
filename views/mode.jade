@@ -6,14 +6,18 @@ block head
 block content
   .content
     .classic
-        .title Classic
-        .cta Play
+        .title
+          h1 Classic
+        .play 
+          a.cta(href='/classic') Play
         .description
           h3 Race the Clock!
           p Increase or Decrease your number by 1 to achieve a number divisible by Three.
     .zero-sum
-        .title Zero Sum
-        .cta Play
+        .title 
+          h1 Zero Sum
+        .play
+          a.cta(href='/zerosum') Play
         .description
           h3 Accumulate Nothing!
           p Increase or decrease your number by 1 or 2 and try to make the changes add up to Zero.

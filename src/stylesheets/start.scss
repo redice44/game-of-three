@@ -37,6 +37,7 @@
     border: $accent-color solid 3px;
     text-align: center;
     background-color: $highlight-color;
+    text-decoration: none;
 
     &:hover {
       background-color: $highlight-hover-cover;
