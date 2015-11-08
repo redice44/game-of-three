@@ -7,6 +7,8 @@ function Routes(app) {
   app.get('/mode', contentHandler.mode);
 
   app.get('/classic', contentHandler.classic);
+
+  app.get('/victory', contentHandler.victory);
 }
 
 module.exports = Routes;

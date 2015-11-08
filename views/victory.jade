@@ -1,0 +1,15 @@
+extends ./layout.jade
+
+block head
+  link(rel='stylesheet', href='/stylesheets/victory.css')
+
+block content
+  .content
+    .title
+      h1 Game of Three
+    .score
+      .timer=time
+      .moves=solution
+    .actions
+      a.classic.cta(href='/classic') Classic
+      a.zero-sum.cta(href='/zerosum') Zero Sum

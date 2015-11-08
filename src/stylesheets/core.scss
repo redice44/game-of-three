@@ -14,3 +14,20 @@ $highlight-hover-cover: #18FFFF;
 html, body {
   background-color: $primary-color;
 }
+
+.cta {
+  width: 200px;
+
+  padding: 10px;
+  line-height: 20px;
+  font-size: 20px;
+  border-radius: 25px;
+  border: $accent-color solid 3px;
+  text-align: center;
+  background-color: $highlight-color;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $highlight-hover-cover;
+  }
+}
