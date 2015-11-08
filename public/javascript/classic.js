@@ -3,6 +3,10 @@
   var NUM_CEILING = 1000;
   var number;
   var userSolution;
+  var startTime;
+  var now;
+  var second;
+  var minute;
 
   function makeNewNum(floor, ceiling) {
     return Math.floor(Math.random() * (ceiling - floor)) + floor;
@@ -29,12 +33,35 @@
       }
     }, 1);
   }
+  
+  function timer() {
+    setInterval(function() {
+      $('#timer').html(getTime);
+    }, 1000);
+  }
+
+  function getTime() {
+      now = Date.now() - startTime.getTime();
+      second = parseInt(now / 1000);
+      minute = parseInt(second / 60);
+      second = second % 60;
+      if (minute < 10) {
+        minute = '0' + minute;
+      }
+
+      if (second < 10) {
+        second = '0' + second;
+      }
+      return minute + ":" + second;
+  }
 
   function generateSolution() {
 
   }
 
   $(document).ready(function() {
+    startTime = new Date();
+    timer();
     userSolution = [];
     number = makeNewNum(NUM_FLOOR, NUM_CEILING);
     console.log('Start', number);
@@ -60,7 +87,7 @@
           console.log('Winner winner chicken dinner!!');
           console.log('Solution', userSolution.join(' '));
           console.log('Verify', verifySolution(userSolution));
-          $(location).attr('href','/victory');
+          $(location).attr('href','/victory?time=' + getTime() + '&solution=' + userSolution.join('_'));
         }
         updateNumber(number);
       } else {

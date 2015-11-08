@@ -12,9 +12,9 @@ function ContentHanlder() {
   };
 
   this.victory = function(req, res, next) {
-    var timer = req.query.time;
+    var time = req.query.time;
     var solution = req.query.solution.split('_');
-    return res.render('victory', {'time': timer, 'solution': solution});
+    return res.render('victory', {'time': time, 'solution': solution});
   };
 }
 
