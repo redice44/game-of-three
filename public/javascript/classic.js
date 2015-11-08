@@ -1,8 +1,13 @@
 (function() {
   var NUM_FLOOR = 700;
   var NUM_CEILING = 1000;
+  var ACTIONS = {
+    divide: 0,
+    add: 1,
+    sub: 2
+  };
+  var startingNumber;
   var number;
-  var userSolution;
   var startTime;
   var now;
   var second;
@@ -17,23 +22,25 @@
   }
 
   function checkWinState(num) {
-    return num === 1;
+    if (num === 1) {
+      $(location).attr('href','/victory?time=' + getTime() + '&number=' + startingNumber);
+    }
   }
 
   function verifySolution(solution) {
     solution = solution.reverse();
     return solution.reduce(function(prev, next) {
       switch (next) {
-        case '+1':
+        case '1':
           return prev - 1;
         case '-1':
           return prev + 1;
-        case '/3':
+        case '0':
           return prev * 3;
       }
     }, 1);
   }
-  
+
   function timer() {
     setInterval(function() {
       $('#timer').html(getTime);
@@ -52,46 +59,80 @@
       if (second < 10) {
         second = '0' + second;
       }
-      return minute + ":" + second;
+      return minute + ':' + second;
   }
 
-  function generateSolution() {
+  function generateSolution(num) {
+    var solution = [];
+    while (num !== 1) {
+      switch (num % 3) {
+        case 0:
+          num /= 3;
+          solution.push(ACTIONS.divide);
+          break;
+        case 1:
+          num = (num - 1) / 3;
+          solution.push(ACTIONS.sub);
+          break;
+        case 2:
+          num = (num + 1) / 3;
+          solution.push(ACTIONS.add);
+          break;
+      }
+    }
+    return solution;
+  }
 
+  function flashIncorrect(item) {
+    console.log(item);
+    $(item).addClass('incorrect')
+    window.setTimeout(function() {
+      $(item).removeClass('incorrect');
+    }, 1000);
+  }
+
+  function isDivisible(num) {
+    return num % 3 === 0;
   }
 
   $(document).ready(function() {
     startTime = new Date();
     timer();
-    userSolution = [];
     number = makeNewNum(NUM_FLOOR, NUM_CEILING);
-    console.log('Start', number);
+    startingNumber = number;
     updateNumber(number);
+    console.log('Start', number);
 
     $('#plus-one').on('click', function(e) {
-      number++;
-      userSolution.push('+1');
-      updateNumber(number);
+      if (isDivisible(number + 1)) {
+        number = (number + 1) / 3;
+        checkWinState(number);
+        updateNumber(number);
+      } else {
+        flashIncorrect(this);
+        // flash incorrect somehow
+      }
     });
 
     $('#sub-one').on('click', function(e) {
-      number--;
-      userSolution.push('-1');
-      updateNumber(number);
+      if (isDivisible(number - 1)) {
+        number = (number - 1) / 3;
+        checkWinState(number);
+        updateNumber(number);
+      } else {
+        flashIncorrect(this);
+        // flash incorrect
+      }
     });
 
     $('#divide').on('click', function(e) {
-      if (number % 3 === 0) {
+      if (isDivisible(number)) {
         number /= 3;
-        userSolution.push('/3');
-        if (checkWinState(number)) {
-          console.log('Winner winner chicken dinner!!');
-          console.log('Solution', userSolution.join(' '));
-          console.log('Verify', verifySolution(userSolution));
-          $(location).attr('href','/victory?time=' + getTime() + '&solution=' + userSolution.join('_'));
-        }
+        checkWinState(number);
         updateNumber(number);
       } else {
-        console.log('Incorrect');
+        flashIncorrect(this);
+        // flash incorrect
       }
     });
 

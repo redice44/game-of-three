@@ -13,8 +13,13 @@ function ContentHanlder() {
 
   this.victory = function(req, res, next) {
     var time = req.query.time;
-    var solution = req.query.solution.split('_');
-    return res.render('victory', {'time': time, 'solution': solution});
+    var number = req.query.number;
+    var errors = req.query.errors || 0;
+    return res.render('victory', {
+      'time': time,
+      'number': number,
+      'errors': errors
+    });
   };
 }
 

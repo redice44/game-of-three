@@ -81,5 +81,22 @@
       font-size: 15vh;
     }
   }
+}
 
+@keyframes flash {
+  0% {
+    background-color: $primary-color;
+  }
+
+  50% {
+    background-color: $fail-color;
+  }
+
+  100% {
+    background-color: $primary-color;
+  }
+}
+
+.incorrect {
+  animation: flash 0.5s 2;
 }
