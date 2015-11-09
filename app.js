@@ -10,5 +10,5 @@ app.use(express.static(__dirname + '/bower_components'));
 
 Routes(app);
 
-app.listen(8082);
+app.listen(app.get('port'));
 console.log('Express Server listening on port 8082.');
