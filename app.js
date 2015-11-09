@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var Routes = require('./routes/index');
 
+app.set('port', (process.env.PORT || 5000));
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
