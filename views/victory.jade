@@ -8,10 +8,12 @@ block content
     .title
       h1 Game of Three
     .score
-      .number=number
-      .timer=time
+      .number
+        h3=number
+      .timer
+        h2=time
       if errors !== 0
         .mistakes Mistakes: #{errors}
     .actions
       a.classic.cta(href='/classic') Classic
-      a.zero-sum.cta(href='/zerosum') Zero Sum
+      a.zero-sum.cta Coming Soon

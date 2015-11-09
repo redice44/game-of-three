@@ -22,5 +22,9 @@
 
   .score {
     flex-direction: column;
+
+    & > div {
+      flex-grow: 1;
+    }
   }
 }
