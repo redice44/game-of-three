@@ -13,7 +13,19 @@ block content
       .timer
         h2=time
       if errors !== 0
-        .mistakes Mistakes: #{errors}
+        .mistakes
+          p Mistakes: #{errors}
     .actions
       a.classic.cta(href='/classic') Classic
       a.zero-sum.cta Coming Soon
+  footer
+    p Original Idea 
+      a(href='https://www.reddit.com/r/dailyprogrammer/comments/3r7wxz/20151102_challenge_239_easy_a_game_of_threes/', target='_blank') /r/dailyprogrammer
+    p Created by - Matt Thomson
+    p
+      a(href='https://github.com/redice44/game-of-three', target='_blank') Github
+      |  &middot; 
+      a(href='https://twitter.com/RedIce44', target='_blank') Twitter
+      |  &middot; 
+      a(href='mailto:red.cataclysm@gmail.com') Email
+    p POW #1

@@ -9,11 +9,14 @@ $fail-color: #B71C1C;
   padding: 0;
 
   font-family: sans-serif;
-  color: $accent-color;;
 }
 
 html, body {
   background-color: $primary-color;
+}
+
+h1, h2, h3, p, a {
+  color: $accent-color;;
 }
 
 h1 {
@@ -26,6 +29,20 @@ h2 {
 
 h3 {
   font-size: 3vw;
+}
+
+footer {
+  padding: 20px;
+  font-size: 1vw;
+  text-align: center;
+  background-color: $accent-color;
+  p, a {
+    color: $primary-color;
+  }
+
+  p {
+    padding: 5px 0;
+  }
 }
 
 .cta {

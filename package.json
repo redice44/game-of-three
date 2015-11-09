@@ -18,5 +18,9 @@
     "gulp-sass": "^2.1.0"
   },
   "devDependencies": {
+  },
+  "respository": {
+    "type": "git",
+    "url": "https://github.com/redice44/game-of-three"
   }
 }
