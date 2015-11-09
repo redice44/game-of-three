@@ -6,6 +6,7 @@
     add: 1,
     sub: 2
   };
+  var errors = 0;
   var startingNumber;
   var number;
   var startTime;
@@ -23,7 +24,9 @@
 
   function checkWinState(num) {
     if (num === 1) {
-      $(location).attr('href','/victory?time=' + getTime() + '&number=' + startingNumber);
+      $(location).attr('href','/victory?time=' + getTime() +
+        '&number=' + startingNumber +
+        '&errors=' + errors);
     }
   }
 
@@ -84,7 +87,7 @@
   }
 
   function flashIncorrect(item) {
-    console.log(item);
+    errors++;
     $(item).addClass('incorrect')
     window.setTimeout(function() {
       $(item).removeClass('incorrect');
